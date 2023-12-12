@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+
+<div id="roda" ><span id="txt"></span>
+</div>
+ 
+ <div>
+<input type="button" value="Hora"  id="prt0" onclick="mudacr()">
+<input type="button" value="Data"  id="prt1" >
+<input type="button" value="Cornometro"  id="prt2" >
+<input type="button" value="Alarme"  id="prt3" >
+</div>
+
+<script>  
+
+
+
+window.onload=function(){getTime();}  
+function getTime(){  
+var today=new Date();  
+var h=today.getHours();  
+var m=today.getMinutes();  
+var s=today.getSeconds();  
+// add a zero in front of numbers<10  
+m=checkTime(m);  
+s=checkTime(s);  
+document.getElementById('txt').innerHTML=h+":"+m+":"+s;  
+setTimeout(function(){getTime()},1000);  
+}  
+//setInterval("getTime()",1000);//another way  
+function checkTime(i){  
+if (i<10){  
+  i="0" + i;  
+ }  
+return i;  
+}  
+
+</script>
+<style type="text/css">
+
+      *{margin:0;
+        padding:0;
+        box-sizing:border-box;
+      }
+
+     #roda {
+             position:relative;
+             width:75%;
+             border:solid 1px red;
+             height:265px;
+             border-radius:250px;
+             background:#101010;
+             margin-top:100px;
+             margin-left:12%;
+     }
+
+          #txt {color:white;
+          width:196px;
+                font-size:50px;
+                position:absolute;
+                margin-left:35px;
+                margin-top:100px;
+                background:red;
+                border-radius:20px;
+          }
+          
+          
+          body {background-attachment:fixed;
+                 background-break:each-box;
+                 background-image: linear-gradient(to left, blue, red, blue);
+          }
+          
+          #prt0 {position:absolute;
+                 border-radius:50px;
+                color:white;
+                width:25%;
+                height:10%;
+                background-image: linear-gradient(to left, red, blue, red);
+                position:fixed;
+                font-size:15px;
+                bottom:0rem;
+          }
+          
+          #prt1 {position:absolute;
+          position:fixed;
+          left:90px;
+           border-radius:50px;
+          font-size:15px;
+          bottom:0rem;
+          color:white;
+          width:25%;
+          height:10%;
+          background-image: linear-gradient(to left, red, blue, red);
+          
+          }#prt2 {position:absolute;
+          color:white;
+          font-size:15px;
+          width:25%;
+           border-radius:50px;
+          position:fixed;
+          left:180px;
+          bottom:0rem;
+          height:10%;
+          background-image: linear-gradient(to left, red, blue, red);
+          
+          }#prt3 {position:absolute;
+           position:fixed;
+           left:270px;
+            border-radius:50px;
+          bottom:0rem;
+          color:white;
+          width:25%;
+          font-size:15px;
+          height:10%;
+          background-image: linear-gradient(to left, red, blue, red);
+             }
+          
+</style>
+</body>
+</html>
+
